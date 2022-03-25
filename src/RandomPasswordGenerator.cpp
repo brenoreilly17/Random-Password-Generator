@@ -15,18 +15,20 @@ void Password::choose_specs() {
     std::cin >> size;
 }
 
+void Password::random_add() {
+    uint32_t num = rand() % 26;
+    char character = num + 'a';
+    pass += character;
+}
+
 std::string Password::password_generator() {
     uint32_t i = 0;
     while (i < size) {
         if (i % 2 == 0) {
-            uint32_t num = rand() % 26;
-            char character = num + 'a';
-            pass += character;
+            random_add();
         }
         else {
-            uint32_t num = rand() % 26;
-            char character = num + 'a';
-            pass += toupper(character);
+            random_add();
         }
         ++i;
     }

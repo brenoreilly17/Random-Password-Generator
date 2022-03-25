@@ -12,6 +12,7 @@ public:
     Password();
     void choose_specs();
     std::string password_generator();
+    void random_add();
 
 private:
     uint32_t size;
