@@ -3,7 +3,7 @@
 
 #include "RandomPasswordGenerator.h"
 #include <iostream>
-#include <cctype>
+#include <random>
 
 
 Password::Password() : size(0), pass("")
@@ -16,7 +16,7 @@ void Password::choose_specs() {
 }
 
 void Password::random_add() {
-    uint32_t num = rand() % 26;
+    uint32_t num = random() % 26;
     char character = num + 'a';
     pass += character;
 }
