@@ -3,8 +3,9 @@
 
 #include "RandomPasswordGenerator.h"
 #include <algorithm>
+#include <cstdlib>
+#include <ctime>
 #include <iostream>
-#include <random>
 
 Password::Password() : size(0), pass(""), cap(false), low(false) {}
 
@@ -28,8 +29,9 @@ void Password::choose_specs() {
 }
 
 void Password::random_add() {
-  uint32_t num = random() % 26;
+  uint32_t num = rand() % 10 + 1;
   if (cap) {
+    srand(time(nullptr));
     char character = num + 'A';
     pass += character;
   }
