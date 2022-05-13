@@ -21,6 +21,7 @@ private:
   bool cap;
   char lows{};
   bool low;
+  size_t i;
 };
 
 #endif // RANDOM_PASSWORD_GENERATOR_RANDOMPASSWORDGENERATOR_H

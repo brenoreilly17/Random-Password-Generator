@@ -6,7 +6,7 @@
 #include <iostream>
 #include <random>
 
-Password::Password() : size(0), cap(false), low(false) {}
+Password::Password() : size(0), cap(false), low(false), i(0) {}
 
 void Password::choose_specs() {
   std::cout << "Choose the length of your password." << std::endl;
@@ -17,19 +17,18 @@ void Password::choose_specs() {
   if (caps == 'Y' || caps == 'y') {
     cap = true;
   }
+
   if (!cap) {
     std::cout << "Would you like your password to be all lowercase [Enter Y/N]?"
               << std::endl;
     std::cin >> lows;
     if (lows == 'Y' || lows == 'y') {
       low = true;
-    }
-    else {
-        low = false;
+    } else {
+      low = false;
     }
   }
 }
-
 
 void Password::random_add() {
   std::random_device rd;
@@ -44,28 +43,23 @@ void Password::random_add() {
     pass += character;
   }
   if (!low && !cap) {
-    uint32_t j = 0;
-    if (j % 2 == 0) {
+    if (i % 2 == 0) {
       char character = distance(mt) + 'a';
       pass += character;
     } else {
       char character = distance(mt) + 'A';
       pass += character;
     }
-    ++j;
   }
 }
 
-
 std::string Password::password_generator() {
-  uint32_t i = 0;
   while (i < size) {
     random_add();
     ++i;
   }
   return pass;
 }
-
 
 int main() {
   Password new_pass;
