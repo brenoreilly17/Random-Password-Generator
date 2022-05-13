@@ -29,26 +29,27 @@ void Password::choose_specs() {
 }
 
 void Password::random_add() {
-  uint32_t num = rand() % 10 + 1;
+  uint32_t i = 0;
   if (cap) {
-    srand(time(nullptr));
-    char character = num + 'A';
+    srand(i);
+    char character = rand();
     pass += character;
   }
   if (low || !cap) {
-    char character = num + 'a';
-    pass += character;
+//    char character = num + 'a';
+//    pass += character;
   }
   if (!low && !cap) {
-    uint32_t i = 0;
-    if (i % 2 == 0) {
-      char character = num + 'a';
-      pass += character;
-    } else {
-      char character = num + 'A';
-      pass += character;
-    }
+//    uint32_t i = 0;
+//    if (i % 2 == 0) {
+//      char character = num + 'a';
+//      pass += character;
+//    } else {
+//      char character = num + 'A';
+//      pass += character;
+//    }
   }
+  ++i;
 }
 
 std::string Password::password_generator() {
