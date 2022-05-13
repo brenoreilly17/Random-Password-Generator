@@ -3,11 +3,10 @@
 
 #include "RandomPasswordGenerator.h"
 #include <algorithm>
-#include <cstdlib>
-#include <ctime>
 #include <iostream>
+#include <random>
 
-Password::Password() : size(0), pass(""), cap(false), low(false) {}
+Password::Password() : size(0), cap(false), low(false) {}
 
 void Password::choose_specs() {
   std::cout << "Choose the length of your password." << std::endl;
@@ -28,29 +27,31 @@ void Password::choose_specs() {
   }
 }
 
+
 void Password::random_add() {
-  uint32_t i = 0;
+  std::random_device rd;
+  std::mt19937 mt(rd());
+  std::uniform_real_distribution<double> distance(1.0, 10.0);
   if (cap) {
-    srand(i);
-    char character = rand();
+    char character = distance(mt) + 'A';
     pass += character;
   }
   if (low || !cap) {
-//    char character = num + 'a';
-//    pass += character;
+    char character = distance(mt) + 'a';
+    pass += character;
   }
   if (!low && !cap) {
-//    uint32_t i = 0;
-//    if (i % 2 == 0) {
-//      char character = num + 'a';
-//      pass += character;
-//    } else {
-//      char character = num + 'A';
-//      pass += character;
-//    }
+    uint32_t i = 0;
+    if (i % 2 == 0) {
+      char character = distance(mt) + 'a';
+      pass += character;
+    } else {
+      char character = distance(mt) + 'A';
+      pass += character;
+    }
   }
-  ++i;
 }
+
 
 std::string Password::password_generator() {
   uint32_t i = 0;
@@ -60,6 +61,7 @@ std::string Password::password_generator() {
   }
   return pass;
 }
+
 
 int main() {
   Password new_pass;

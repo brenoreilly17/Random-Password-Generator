@@ -17,9 +17,9 @@ public:
 private:
   uint32_t size;
   std::string pass;
-  char caps;
+  char caps{};
   bool cap;
-  char lows;
+  char lows{};
   bool low;
 };
 
