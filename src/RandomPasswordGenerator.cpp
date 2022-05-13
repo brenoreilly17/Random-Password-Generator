@@ -54,7 +54,7 @@ void Password::random_add() {
 }
 
 std::string Password::password_generator() {
-  while (i < size) {
+  while (i <= size - 1) {
     random_add();
     ++i;
   }
