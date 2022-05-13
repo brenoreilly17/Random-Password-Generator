@@ -11,7 +11,7 @@ Password::Password() : size(0), cap(false), low(false), i(0) {}
 void Password::choose_specs() {
   std::cout << "Choose the length of your password." << std::endl;
   std::cin >> size;
-  std::cout << "Would you like your password to be all capitals [Enter Y/N]?"
+  std::cout << "Would you like your password to be all capitals [Enter Y/N]."
             << std::endl;
   std::cin >> caps;
   if (caps == 'Y' || caps == 'y') {
@@ -19,7 +19,7 @@ void Password::choose_specs() {
   }
 
   if (!cap) {
-    std::cout << "Would you like your password to be all lowercase [Enter Y/N]?"
+    std::cout << "Would you like your password to be all lowercase [Enter Y/N]."
               << std::endl;
     std::cin >> lows;
     if (lows == 'Y' || lows == 'y') {
