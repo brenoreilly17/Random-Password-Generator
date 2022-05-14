@@ -18,14 +18,30 @@ void Password::choose_specs() {
     cap = true;
   }
 
+  else if (caps == 'N' || caps == 'n') {
+    cap = false;
+  }
+
+  else {
+    while (caps != 'N' && caps != 'n' && caps != 'y' && caps != 'Y') {
+      std::cout << "That is not a valid request. Please enter [Y/N].";
+      std::cin >> caps;
+    }
+  }
+
   if (!cap) {
     std::cout << "Would you like your password to be all lowercase [Enter Y/N]."
               << std::endl;
     std::cin >> lows;
     if (lows == 'Y' || lows == 'y') {
       low = true;
-    } else {
+    } else if (lows == 'n' || lows == 'N') {
       low = false;
+    } else {
+      while (lows != 'N' && lows != 'n' && lows != 'y' && lows != 'Y') {
+        std::cout << "That is not a valid request. Please enter [Y/N].";
+        std::cin >> lows;
+      }
     }
   }
 }
@@ -34,6 +50,7 @@ void Password::random_add() {
   std::random_device rd;
   std::mt19937 mt(rd());
   std::uniform_real_distribution<double> distance(1.0, 10.0);
+
   if (cap) {
     char character = distance(mt) + 'A';
     pass += character;
