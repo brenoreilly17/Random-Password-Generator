@@ -90,6 +90,9 @@ private:
    */
   bool low;
 
+  /** @Brief Method to keep track of adding randomness to the password
+   *
+   */
   size_t i;
 };
 
