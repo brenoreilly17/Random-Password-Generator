@@ -60,39 +60,32 @@ bool Password::number_choice() {
   std::cout << "Would you like numbers added to your password?" << std::endl;
   std::cin >> numbers;
   if (numbers == 'Y' || numbers == 'y') {
+    return true;
+  } else if (numbers == 'n' || numbers == 'N') {
+    return false;
+  } else {
+    while (numbers != 'n' && numbers != 'N' && numbers != 'Y' &&
+           numbers != 'y') {
+      std::cout << "That is not a valid request. Please enter [Y/N].";
+      std::cin >> numbers;
+    }
+    if (numbers == 'Y' || numbers == 'y') {
       return true;
-  }
-  else if (numbers == 'n' || numbers == 'N') {
+    } else {
       return false;
-  }
-  else {
-      while (numbers != 'n' && numbers != 'N' && numbers != 'Y' && numbers != 'y') {
-          std::cout << "That is not a valid request. Please enter [Y/N].";
-          std::cin >> numbers;
-      }
-      if (numbers == 'Y' || numbers == 'y') {
-          return true;
-      }
-      else {
-          return false;
-      }
+    }
   }
 }
 
 std::string Password::input_numbers() {
-    uint32_t x = 0;
-    uint32_t j = 0;
-    while (j < size) {
-        if (j % 2 == 0) {
-            pass[j] = pass[x % 2];
-            x = x + 3;
-            if (x > 9) {
-                x = 0;
-            }
-        }
-        ++j;
+  uint32_t j = 0;
+  while (j < size) {
+    if (j % 2 == 0) {
+      pass[j] = (2);
     }
-    return pass;
+    ++j;
+  }
+  return pass;
 }
 
 bool Password::uppercaseValidInput() const {
@@ -136,7 +129,7 @@ void Password::random_add() {
 }
 
 std::string Password::password_generator() {
-  while (i <= size - 1) {
+  while (i < size) {
     random_add();
     ++i;
   }
@@ -146,16 +139,15 @@ std::string Password::password_generator() {
 int main() {
   Password new_pass;
   new_pass.choose_specs();
-  new_pass.number_choice();
 
-    if (new_pass.number_choice()) {
-        new_pass.password_generator();
-        std::cout << new_pass.input_numbers() << std::endl;
-    }
+  if (new_pass.number_choice()) {
+    new_pass.password_generator();
+    std::cout << new_pass.input_numbers() << std::endl;
+  }
 
-    else {
-        std::cout << new_pass.password_generator() << std::endl;
-    }
+  else {
+    std::cout << new_pass.password_generator() << std::endl;
+  }
 
   return 0;
 }

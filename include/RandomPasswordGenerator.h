@@ -9,9 +9,9 @@
 
 class Password {
 public:
-    /**
-     * @Brief Constructor for the password
-     */
+  /**
+   * @Brief Constructor for the password
+   */
   Password();
 
   /**
@@ -55,9 +55,9 @@ public:
   std::string input_numbers();
 
 private:
-    /** @Brief Length of the password (based on user input)
-     *
-     */
+  /** @Brief Length of the password (based on user input)
+   *
+   */
   uint32_t size;
 
   /** @Brief User's new password
