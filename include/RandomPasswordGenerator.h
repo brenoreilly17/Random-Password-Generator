@@ -41,18 +41,53 @@ public:
    * @return True or false
    */
   bool uppercaseValidInput() const;
+
+  /** @Brief
+   * Determines if the user wants numbers in his/her password
+   * @return True or false
+   */
   bool number_choice();
+
+  /** @Brief
+   * Puts numbers into the password if the user wants
+   * @return Password with numbers mixed in it
+   */
   std::string input_numbers();
 
 private:
+    /** @Brief Length of the password (based on user input)
+     *
+     */
   uint32_t size;
+
+  /** @Brief User's new password
+   *
+   */
   std::string pass;
 
+  /** @Brief Does the user want all caps?
+   *
+   */
   char caps{};
+
+  /** @Brief Does the user want all lowercase?
+   *
+   */
   char lows{};
+
+  /** @Brief Does the user want numbers mixed in the password?
+   *
+   */
   char numbers{};
 
+  /** @Brief Yes or no for all caps?
+   *
+   */
   bool cap;
+
+  /** @Brief Yes or no for all lowercase?
+   *
+   */
   bool low;
 
   size_t i;
