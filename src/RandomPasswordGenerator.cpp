@@ -80,13 +80,15 @@ bool Password::number_choice() {
 }
 
 std::string Password::input_numbers() {
-    std::random_device rd;
-    std::mt19937 mt(rd());
-    std::uniform_real_distribution<double> distance(1.0, 10.0);
+    uint32_t x = 0;
     uint32_t j = 0;
     while (j < size) {
-        if (j % 3 == 0) {
-            std::replace(pass.begin(), pass.end(), pass[j], pass[static_cast<char>(distance(mt))]);
+        if (j % 2 == 0) {
+            pass[j] = pass[x % 2];
+            x = x + 3;
+            if (x > 9) {
+                x = 0;
+            }
         }
         ++j;
     }
@@ -145,8 +147,6 @@ int main() {
   Password new_pass;
   new_pass.choose_specs();
   new_pass.number_choice();
-
-  std::cout << std::endl;
 
     if (new_pass.number_choice()) {
         new_pass.password_generator();
