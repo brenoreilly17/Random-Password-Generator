@@ -28,10 +28,10 @@ void Password::choose_specs() {
       std::cin >> caps;
     }
     if (caps == 'N' || caps == 'n') {
-        caps = false;
+        cap = false;
     }
     else {
-        caps = true;
+        cap = true;
     }
   }
 
@@ -111,6 +111,7 @@ std::string Password::password_generator() {
 int main() {
   Password new_pass;
   new_pass.choose_specs();
+  std::cout << std::endl;
   std::cout << new_pass.password_generator() << std::endl;
   return 0;
 }
