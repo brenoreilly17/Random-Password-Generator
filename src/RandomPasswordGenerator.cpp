@@ -77,15 +77,14 @@ bool Password::number_choice() {
   }
 }
 
-std::string Password::input_numbers() {
+void Password::input_numbers() {
   uint32_t j = 0;
-  while (j < size) {
-    if (j % 2 == 0) {
-      pass[j] = (2);
+  while (j < pass.size()) {
+    if (j % 4 == 3) {
+      std::replace(pass.begin(), pass.end(), pass[j], '2');
     }
     ++j;
   }
-  return pass;
 }
 
 bool Password::uppercaseValidInput() const {
@@ -142,7 +141,8 @@ int main() {
 
   if (new_pass.number_choice()) {
     new_pass.password_generator();
-    std::cout << new_pass.input_numbers() << std::endl;
+    new_pass.input_numbers();
+    std::cout << new_pass.pass;
   }
 
   else {

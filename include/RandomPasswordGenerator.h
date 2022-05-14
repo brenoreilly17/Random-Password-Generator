@@ -48,11 +48,12 @@ public:
    */
   bool number_choice();
 
-  /** @Brief
-   * Puts numbers into the password if the user wants
-   * @return Password with numbers mixed in it
+  /** @Brief Puts numbers into the password if the user wants
+   *
    */
-  std::string input_numbers();
+  void input_numbers();
+
+  std::string pass;
 
 private:
   /** @Brief Length of the password (based on user input)
@@ -63,7 +64,6 @@ private:
   /** @Brief User's new password
    *
    */
-  std::string pass;
 
   /** @Brief Does the user want all caps?
    *
