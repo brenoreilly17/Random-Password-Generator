@@ -13,6 +13,8 @@ public:
   void choose_specs();
   std::string password_generator();
   void random_add();
+  bool lowercaseValidInput() const;
+  bool uppercaseValidInput() const;
 
 private:
   uint32_t size;

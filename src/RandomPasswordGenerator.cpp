@@ -23,9 +23,15 @@ void Password::choose_specs() {
   }
 
   else {
-    while (caps != 'N' && caps != 'n' && caps != 'y' && caps != 'Y') {
+    while (!uppercaseValidInput()) {
       std::cout << "That is not a valid request. Please enter [Y/N].";
       std::cin >> caps;
+    }
+    if (caps == 'N' || caps == 'n') {
+        caps = false;
+    }
+    else {
+        caps = true;
     }
   }
 
@@ -38,12 +44,36 @@ void Password::choose_specs() {
     } else if (lows == 'n' || lows == 'N') {
       low = false;
     } else {
-      while (lows != 'N' && lows != 'n' && lows != 'y' && lows != 'Y') {
+      while (!lowercaseValidInput()) {
         std::cout << "That is not a valid request. Please enter [Y/N].";
         std::cin >> lows;
       }
+      if (lows == 'n' || lows == 'N') {
+          lows = false;
+      }
+      else {
+          lows = true;
+      }
     }
   }
+}
+
+bool Password::uppercaseValidInput() const {
+    if (caps != 'n' && caps != 'N' && caps != 'Y' && caps != 'y') {
+        return false;
+    }
+    else {
+        return true;
+    }
+}
+
+bool Password::lowercaseValidInput() const {
+    if (lows != 'n' && lows != 'N' && lows != 'Y' && lows != 'y') {
+        return false;
+    }
+    else {
+        return true;
+    }
 }
 
 void Password::random_add() {
