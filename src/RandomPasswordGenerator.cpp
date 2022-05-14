@@ -79,6 +79,20 @@ bool Password::number_choice() {
   }
 }
 
+std::string Password::input_numbers() {
+    std::random_device rd;
+    std::mt19937 mt(rd());
+    std::uniform_real_distribution<double> distance(1.0, 10.0);
+    uint32_t j = 0;
+    while (j < size) {
+        if (j % 3 == 0) {
+            std::replace(pass.begin(), pass.end(), pass[j], pass[static_cast<char>(distance(mt))]);
+        }
+        ++j;
+    }
+    return pass;
+}
+
 bool Password::uppercaseValidInput() const {
   if (caps != 'n' && caps != 'N' && caps != 'Y' && caps != 'y') {
     return false;
@@ -133,6 +147,15 @@ int main() {
   new_pass.number_choice();
 
   std::cout << std::endl;
-  std::cout << new_pass.password_generator() << std::endl;
+
+    if (new_pass.number_choice()) {
+        new_pass.password_generator();
+        std::cout << new_pass.input_numbers() << std::endl;
+    }
+
+    else {
+        std::cout << new_pass.password_generator() << std::endl;
+    }
+
   return 0;
 }

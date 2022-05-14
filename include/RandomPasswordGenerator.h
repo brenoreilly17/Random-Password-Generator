@@ -16,6 +16,7 @@ public:
   bool lowercaseValidInput() const;
   bool uppercaseValidInput() const;
   bool number_choice();
+  std::string input_numbers();
 
 private:
   uint32_t size;
