@@ -15,14 +15,19 @@ public:
   void random_add();
   bool lowercaseValidInput() const;
   bool uppercaseValidInput() const;
+  bool number_choice();
 
 private:
   uint32_t size;
   std::string pass;
+
   char caps{};
-  bool cap;
   char lows{};
+  char numbers{};
+
+  bool cap;
   bool low;
+
   size_t i;
 };
 

@@ -28,10 +28,9 @@ void Password::choose_specs() {
       std::cin >> caps;
     }
     if (caps == 'N' || caps == 'n') {
-        cap = false;
-    }
-    else {
-        cap = true;
+      cap = false;
+    } else {
+      cap = true;
     }
   }
 
@@ -49,31 +48,51 @@ void Password::choose_specs() {
         std::cin >> lows;
       }
       if (lows == 'n' || lows == 'N') {
-          lows = false;
-      }
-      else {
-          lows = true;
+        lows = false;
+      } else {
+        lows = true;
       }
     }
   }
 }
 
+bool Password::number_choice() {
+  std::cout << "Would you like numbers added to your password?" << std::endl;
+  std::cin >> numbers;
+  if (numbers == 'Y' || numbers == 'y') {
+      return true;
+  }
+  else if (numbers == 'n' || numbers == 'N') {
+      return false;
+  }
+  else {
+      while (numbers != 'n' && numbers != 'N' && numbers != 'Y' && numbers != 'y') {
+          std::cout << "That is not a valid request. Please enter [Y/N].";
+          std::cin >> numbers;
+      }
+      if (numbers == 'Y' || numbers == 'y') {
+          return true;
+      }
+      else {
+          return false;
+      }
+  }
+}
+
 bool Password::uppercaseValidInput() const {
-    if (caps != 'n' && caps != 'N' && caps != 'Y' && caps != 'y') {
-        return false;
-    }
-    else {
-        return true;
-    }
+  if (caps != 'n' && caps != 'N' && caps != 'Y' && caps != 'y') {
+    return false;
+  } else {
+    return true;
+  }
 }
 
 bool Password::lowercaseValidInput() const {
-    if (lows != 'n' && lows != 'N' && lows != 'Y' && lows != 'y') {
-        return false;
-    }
-    else {
-        return true;
-    }
+  if (lows != 'n' && lows != 'N' && lows != 'Y' && lows != 'y') {
+    return false;
+  } else {
+    return true;
+  }
 }
 
 void Password::random_add() {
@@ -111,6 +130,8 @@ std::string Password::password_generator() {
 int main() {
   Password new_pass;
   new_pass.choose_specs();
+  new_pass.number_choice();
+
   std::cout << std::endl;
   std::cout << new_pass.password_generator() << std::endl;
   return 0;
