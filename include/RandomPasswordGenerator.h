@@ -53,6 +53,7 @@ public:
    */
   void input_numbers();
 
+  /** @Brief The
   std::string pass;
 
 private:
