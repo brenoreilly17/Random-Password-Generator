@@ -53,7 +53,9 @@ public:
    */
   void input_numbers();
 
-  /** @Brief The
+  /** @Brief The password itself
+   *
+   */
   std::string pass;
 
 private:
