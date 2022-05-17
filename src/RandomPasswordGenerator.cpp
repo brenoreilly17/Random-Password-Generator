@@ -80,9 +80,9 @@ bool Password::number_choice() {
 void Password::input_numbers() {
   uint32_t j = 0;
   while (j < pass.size()) {
-      // inputs number ever four characters
+    // inputs number ever four characters
     if (j % 4 == 3) {
-        // STL algorithm that replaces all 'pass [j]' with '2'
+      // STL algorithm that replaces all 'pass [j]' with '2'
       std::replace(pass.begin(), pass.end(), pass[j], '2');
     }
     ++j;
@@ -90,6 +90,7 @@ void Password::input_numbers() {
 }
 
 bool Password::uppercaseValidInput() const {
+  // Is the input valid?
   if (caps != 'n' && caps != 'N' && caps != 'Y' && caps != 'y') {
     return false;
   } else {
@@ -98,6 +99,7 @@ bool Password::uppercaseValidInput() const {
 }
 
 bool Password::lowercaseValidInput() const {
+  // Is the input valid?
   if (lows != 'n' && lows != 'N' && lows != 'Y' && lows != 'y') {
     return false;
   } else {
@@ -106,7 +108,7 @@ bool Password::lowercaseValidInput() const {
 }
 
 void Password::random_add() {
-    // C++ 11 "better way" of randomization
+  // C++ 11 "better way" of randomization
   std::random_device rd;
   std::mt19937 mt(rd());
   // Defining "randomness" parameters
@@ -143,14 +145,14 @@ int main() {
   Password new_pass;
   new_pass.choose_specs();
 
-  //if the user wanted numbers
+  // if the user wanted numbers
   if (new_pass.number_choice()) {
     new_pass.password_generator();
     new_pass.input_numbers();
     std::cout << new_pass.pass;
   }
 
-  //if the user did not want numbers
+  // if the user did not want numbers
   else {
     std::cout << new_pass.password_generator() << std::endl;
   }
