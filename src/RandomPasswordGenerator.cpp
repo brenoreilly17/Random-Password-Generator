@@ -81,6 +81,7 @@ void Password::input_numbers() {
   uint32_t j = 0;
   while (j < pass.size()) {
     if (j % 4 == 3) {
+        // STL algorithm that replaces all 'pass [j]' with '2'
       std::replace(pass.begin(), pass.end(), pass[j], '2');
     }
     ++j;
