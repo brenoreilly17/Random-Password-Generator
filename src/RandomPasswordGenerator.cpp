@@ -106,6 +106,7 @@ bool Password::lowercaseValidInput() const {
 }
 
 void Password::random_add() {
+    // C++ 11 "better way" of randomization
   std::random_device rd;
   std::mt19937 mt(rd());
   std::uniform_real_distribution<double> distance(1.0, 10.0);
