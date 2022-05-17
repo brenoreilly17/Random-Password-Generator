@@ -149,6 +149,7 @@ int main() {
     std::cout << new_pass.pass;
   }
 
+  //if the user did not want numbers
   else {
     std::cout << new_pass.password_generator() << std::endl;
   }
