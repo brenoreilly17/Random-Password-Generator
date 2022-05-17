@@ -142,6 +142,7 @@ int main() {
   Password new_pass;
   new_pass.choose_specs();
 
+  //if the user wanted numbers
   if (new_pass.number_choice()) {
     new_pass.password_generator();
     new_pass.input_numbers();
