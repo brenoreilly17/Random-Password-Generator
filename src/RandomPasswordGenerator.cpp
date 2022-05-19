@@ -143,6 +143,7 @@ std::string Password::password_generator() {
 }
 
 int main() {
+    //Initializing password object from the Password class
   Password new_pass;
   new_pass.choose_specs();
 
