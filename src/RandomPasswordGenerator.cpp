@@ -80,9 +80,9 @@ bool Password::number_choice() {
 void Password::input_numbers() {
   uint32_t j = 0;
   while (j < pass.size()) {
-    // inputs number ever four characters
+    // Inputs number ever four characters
     if (j % 4 == 3) {
-      // STL algorithm that replaces all 'pass [j]' with '2'
+      // STL compatible algorithm that replaces all 'pass [j]' with '2'
       std::replace(pass.begin(), pass.end(), pass[j], '2');
     }
     ++j;
@@ -134,7 +134,7 @@ void Password::random_add() {
 }
 
 std::string Password::password_generator() {
-    //With each pass, adding random character
+    // With each pass, adding random character
   while (i < size) {
     random_add();
     ++i;
@@ -143,18 +143,18 @@ std::string Password::password_generator() {
 }
 
 int main() {
-    //Initializing password object from the Password class
+    // Initializing password object from the Password class
   Password new_pass;
   new_pass.choose_specs();
 
-  // if the user wanted numbers
+  // If the user wanted numbers
   if (new_pass.number_choice()) {
     new_pass.password_generator();
     new_pass.input_numbers();
     std::cout << new_pass.pass;
   }
 
-  // if the user did not want numbers
+  // If the user did not want numbers
   else {
     std::cout << new_pass.password_generator() << std::endl;
   }
