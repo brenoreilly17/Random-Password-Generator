@@ -134,7 +134,7 @@ void Password::random_add() {
 }
 
 std::string Password::password_generator() {
-    // With each pass, adding random character
+  // With each pass, adding random character
   while (i < size) {
     random_add();
     ++i;
@@ -143,7 +143,7 @@ std::string Password::password_generator() {
 }
 
 int main() {
-    // Initializing password object from the Password class
+  // Initializing password object from the Password class
   Password new_pass;
   new_pass.choose_specs();
 
