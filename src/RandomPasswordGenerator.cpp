@@ -43,6 +43,7 @@ void Password::choose_specs() {
     } else if (lows == 'n' || lows == 'N') {
       low = false;
     } else {
+        // Keeps asking until valid input is entered
       while (!lowercaseValidInput()) {
         std::cout << "That is not a valid request. Please enter [Y/N].";
         std::cin >> lows;
