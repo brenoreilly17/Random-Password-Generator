@@ -23,7 +23,7 @@ void Password::choose_specs() {
   }
 
   else {
-      // Keeps asking until valid input is entered
+    // Keeps asking until valid input is entered
     while (!uppercaseValidInput()) {
       std::cout << "That is not a valid request. Please enter [Y/N].";
       std::cin >> caps;
