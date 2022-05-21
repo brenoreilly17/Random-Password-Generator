@@ -10,6 +10,7 @@ Password::Password() : size(0), cap(false), low(false), i(0) {}
 
 void Password::choose_specs() {
   std::cout << "Choose the length of your password." << std::endl;
+  // Length input
   std::cin >> size;
   std::cout << "Would you like your password to be all capitals [Enter Y/N]."
             << std::endl;
