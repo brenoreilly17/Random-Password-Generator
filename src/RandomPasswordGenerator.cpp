@@ -41,6 +41,7 @@ void Password::choose_specs() {
   if (!cap) {
     std::cout << "Would you like your password to be all lowercase [Enter Y/N]."
               << std::endl;
+    // Lowercase input
     std::cin >> lows;
     if (lows == 'Y' || lows == 'y') {
       low = true;
