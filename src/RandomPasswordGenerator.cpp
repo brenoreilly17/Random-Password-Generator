@@ -14,6 +14,7 @@ void Password::choose_specs() {
   std::cin >> size;
   std::cout << "Would you like your password to be all capitals [Enter Y/N]."
             << std::endl;
+  // Caps?
   std::cin >> caps;
   if (caps == 'Y' || caps == 'y') {
     cap = true;
@@ -36,6 +37,7 @@ void Password::choose_specs() {
     }
   }
 
+  // If user didn't want all caps, do they want all lowercase?
   if (!cap) {
     std::cout << "Would you like your password to be all lowercase [Enter Y/N]."
               << std::endl;
