@@ -63,6 +63,7 @@ void Password::choose_specs() {
 }
 
 bool Password::number_choice() {
+    // Only an option, not necessary
   std::cout << "Would you like numbers added to your password?" << std::endl;
   std::cin >> numbers;
   if (numbers == 'Y' || numbers == 'y') {
