@@ -63,7 +63,7 @@ void Password::choose_specs() {
 }
 
 bool Password::number_choice() {
-    // Only an option, not necessary
+  // Only an option, not necessary
   std::cout << "Would you like numbers added to your password?" << std::endl;
   // Number input
   std::cin >> numbers;
@@ -74,7 +74,7 @@ bool Password::number_choice() {
   } else {
     while (numbers != 'n' && numbers != 'N' && numbers != 'Y' &&
            numbers != 'y') {
-        // Keeps asking user until a valid request is inputted
+      // Keeps asking user until a valid request is inputted
       std::cout << "That is not a valid request. Please enter [Y/N].";
       // Number input
       std::cin >> numbers;
