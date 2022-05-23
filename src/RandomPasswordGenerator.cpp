@@ -161,6 +161,7 @@ int main() {
   if (new_pass.number_choice()) {
     new_pass.password_generator();
     new_pass.input_numbers();
+    // Output password to console
     std::cout << new_pass.pass;
   }
 
