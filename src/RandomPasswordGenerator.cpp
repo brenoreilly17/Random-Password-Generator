@@ -167,7 +167,7 @@ int main() {
 
   // If the user did not want numbers in password
   else {
-      // Output password
+      // Output password to
     std::cout << new_pass.password_generator() << std::endl;
   }
 
