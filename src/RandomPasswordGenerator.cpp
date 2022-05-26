@@ -90,7 +90,7 @@ bool Password::number_choice() {
 void Password::input_numbers() {
   uint32_t j = 0;
   while (j < pass.size()) {
-    // Inputs number (2) ever four characters
+    // Inputs number (2) every four characters
     if (j % 4 == 3) {
       // STL compatible algorithm that replaces all 'pass [j]' with '2'
       std::replace(pass.begin(), pass.end(), pass[j], '2');
