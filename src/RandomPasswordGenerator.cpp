@@ -1,5 +1,6 @@
 // Name: Brendan O'Reilly
 // Email: brenoreilly17@gmail.com
+// Personal
 
 #include "RandomPasswordGenerator.h"
 #include <algorithm>
