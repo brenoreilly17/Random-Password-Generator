@@ -119,7 +119,7 @@ bool Password::lowercaseValidInput() const {
 }
 
 void Password::random_add() {
-  // C++ style randomization technique
+  // C++ style randomization technique (sets 'seed', seed determines number combo)
   std::random_device rd;
   std::mt19937 mt(rd());
   // Defining "randomness" parameters
