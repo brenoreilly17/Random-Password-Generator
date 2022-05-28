@@ -7,7 +7,7 @@
 #include <iostream>
 #include <random>
 
-//Password
+//Password constru
 Password::Password() : size(0), cap(false), low(false), i(0) {}
 
 void Password::choose_specs() {
