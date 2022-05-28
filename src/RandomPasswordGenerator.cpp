@@ -119,7 +119,7 @@ bool Password::lowercaseValidInput() const {
 }
 
 void Password::random_add() {
-  // C++ 11 randomization technique
+  // C++ style randomization technique
   std::random_device rd;
   std::mt19937 mt(rd());
   // Defining "randomness" parameters
