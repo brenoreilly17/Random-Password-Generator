@@ -122,6 +122,7 @@ void Password::random_add() {
   // C++ style randomization technique
   std::random_device rd;
   std::mt19937 mt(rd());
+
   // Defining "randomness" parameters
   std::uniform_real_distribution<double> distance(1.0, 10.0);
 
