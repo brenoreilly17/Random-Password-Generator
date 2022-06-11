@@ -75,6 +75,7 @@ bool Password::number_choice() {
   } else {
     while (numbers != 'n' && numbers != 'N' && numbers != 'Y' &&
            numbers != 'y') {
+
       // Keeps asking user until a valid request is inputted
       std::cout << "That is not a valid request. Please enter [Y/N].";
       std::cin >> numbers;
