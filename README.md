@@ -1,2 +1,2 @@
 # Random-Password-Generator
-This program provides you with a random password generator, based on specifications you provide via inputs. Use this password when safeguarding information. Don't let anyone access your private information!
+Did you know that 2/3 of people use the same password across multiple accounts, and 13% of people use the same password for every account? Doing so puts your information in jeopardy. Well, no need to worry - I developed a program with C++ that gives you a secure, randomized password based on your personal preferences. Do you want your password to be completely lowercase? Uppercase? 
