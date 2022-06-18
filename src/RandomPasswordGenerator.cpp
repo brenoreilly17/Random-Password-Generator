@@ -139,7 +139,6 @@ void Password::random_add() {
       char character = distance(mt) + 'a';
       pass += character;
     } else {
-
       char character = distance(mt) + 'A';
       pass += character;
     }
