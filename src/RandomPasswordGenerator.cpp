@@ -136,7 +136,7 @@ void Password::random_add() {
   }
   if (!low && !cap) {
     if (i % 2 == 0) {
-      char character = distance(mt) + 'a';
+
       pass += character;
     } else {
       char character = distance(mt) + 'A';
