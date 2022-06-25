@@ -148,7 +148,7 @@ void Password::random_add() {
 std::string Password::password_generator() {
   // With each iteration, adding random character
   while (i <= pass.size() - 1) {
-      random_add();
+    random_add();
     ++i;
   }
   return pass;
